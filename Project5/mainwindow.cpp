@@ -444,48 +444,63 @@ void MainWindow::on_pushButton_3_clicked() // READ
 {
     QFile file("data.txt");
     quint8 motor_number = 0;
+    count_string = 0;
 
     ui->textEdit->clear();
 
-    if(file.open(QIODevice::ReadOnly))
+    if(file.exists())
     {
-        QDataStream in(&file);
-        while(!in.atEnd())
+        if(file.open(QIODevice::ReadOnly))
         {
-            in >> motor_rc[count_string][motor_number];
-
-            qDebug() << count_string << motor_rc[count_string][motor_number].qMotor << motor_rc[count_string][motor_number].qDirection << motor_rc[count_string][motor_number].qMode;
-
-            ui->textEdit->append(motor_rc[count_string][motor_number].qMotor);
-            ui->textEdit->append(motor_rc[count_string][motor_number].qDirection);
-            ui->textEdit->append(motor_rc[count_string][motor_number].qMode);
-
-            if(motor_number == COUNT)
+            QDataStream in(&file);
+            while(!in.atEnd())
             {
-                count_string++;
-                motor_number = 0;
-            }
-            else motor_number++;
-        }
-    }
+                in >> motor_rc[count_string][motor_number];
 
-    qDebug() << "file was read";
-    file.close();
+                qDebug() << count_string << motor_rc[count_string][motor_number].qMotor << motor_rc[count_string][motor_number].qDirection << motor_rc[count_string][motor_number].qMode;
+
+                ui->textEdit->append(motor_rc[count_string][motor_number].qMotor);
+                ui->textEdit->append(motor_rc[count_string][motor_number].qDirection);
+                ui->textEdit->append(motor_rc[count_string][motor_number].qMode);
+
+                if(motor_number == COUNT - 1)
+                {
+                    count_string++;
+                    motor_number = 0;
+                }
+                else motor_number++;
+            }
+        }
+        qDebug() << "file was read";
+        ui->txtOutput->append("file was read");
+        qDebug() << count_string;
+        file.close();
+    }
+    else
+    {
+        qDebug() << "file wasn't find";
+        ui->txtOutput->append("file wasn't find");
+    }
 }
 
 void MainWindow::on_pushButton_2_clicked() // WRITE
 {
     QFile file("data.txt");
+    int i = 0;
 
-    if(file.open(QIODevice::Append))
+    QDataStream out(&file);
+
+    if(file.exists())
     {
-        QDataStream out(&file);
-        char i = 0;
-
         while(!out.atEnd())
         {
             i++;
         }
+    }
+    else i = 0;
+
+    if(file.open(QIODevice::Append))
+    {
 
         motor[i][0].qMotor = ui->lineEdit_7->text();
         motor[i][0].qDirection = ui->comboBox_9->currentText();
@@ -505,6 +520,7 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
             {
                 out << motor[i][x].qMotor << motor[i][x].qDirection << motor[i][x].qMode;
                 qDebug() << "file was write";
+                ui->txtOutput->append("file was write");
             }
         }
         else
@@ -517,42 +533,47 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
 
 void MainWindow::on_pushButton_4_clicked() //START
 {
-    char i = 1;
-    for(char y = 0; y <= 1; y++)
+    for(int i = 0; i <= count_string; i++)
     {
-        serial.putChar(static_cast<char>(0xF8)); //START BIT
-        serial.putChar(y + 1); //Driver
+        for(int y = 1; y <= COUNT - 1; y++)
+        {
+            if(serial.isOpen())
+            {
+                serial.putChar(static_cast<char>(0xF8)); //START BIT
+                serial.putChar(static_cast<char>(y)); //Driver
 
-        if(motor_rc[i][y].qDirection == "LEFT")
-            serial.putChar(0x52);
-        else if(motor_rc[i][y].qDirection == "RIGHT")
-            serial.putChar(0x55);
+                if(motor_rc[i][y].qDirection == "LEFT")
+                    serial.putChar(0x52);
+                else if(motor_rc[i][y].qDirection == "RIGHT")
+                    serial.putChar(0x55);
 
-        if(motor_rc[i][y].qMode == "FULL STEP")
-            serial.putChar(0x46);
-        else if(motor_rc[i][y].qMode == "HALF STEP")
-            serial.putChar(0x48);
-        else if(motor_rc[i][y].qMode == "QUARTER STEP")
-            serial.putChar(0x51);
-        else if(motor_rc[i][y].qMode == "EIGHTH STEP")
-            serial.putChar(0x45);
-        else if(motor_rc[i][y].qMode == "SIXTEENTH STEP")
-            serial.putChar(0x53);
+                if(motor_rc[i][y].qMode == "FULL STEP")
+                    serial.putChar(0x46);
+                else if(motor_rc[i][y].qMode == "HALF STEP")
+                    serial.putChar(0x48);
+                else if(motor_rc[i][y].qMode == "QUARTER STEP")
+                    serial.putChar(0x51);
+                else if(motor_rc[i][y].qMode == "EIGHTH STEP")
+                    serial.putChar(0x45);
+                else if(motor_rc[i][y].qMode == "SIXTEENTH STEP")
+                    serial.putChar(0x53);
 
-        int32_t value2 = motor_rc[i][y].qMotor.toLong();
-        int first2 = value2 & 0xFF;
-        int second2 = value2 >> 8;
+                int32_t value2 = motor_rc[i][y].qMotor.toLong();
+                int first2 = value2 & 0xFF;
+                int second2 = value2 >> 8;
 
-        serial.putChar(static_cast<char>(second2)); //SECOND BIT
-        serial.putChar(static_cast<char>(first2)); //FIRST BIT
+                serial.putChar(static_cast<char>(second2)); //SECOND BIT
+                serial.putChar(static_cast<char>(first2)); //FIRST BIT
 
-        serial.putChar(0x00);
-        serial.putChar(0x08);
+                serial.putChar(0x00);
+                serial.putChar(0x08);
 
-        serial.putChar(static_cast<char>(0xE0)); //STOP BIT
+                serial.putChar(static_cast<char>(0xE0)); //STOP BIT
 
-        qDebug() << "data was send";
-        ui->txtOutput->append("start motor");
+                qDebug() << "data was send";
+                ui->txtOutput->append("start motor");
+            }
+        }
     }
 }
 

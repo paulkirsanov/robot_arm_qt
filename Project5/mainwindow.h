@@ -96,7 +96,7 @@ private:
     int value_slider2 = 1;
 
     qRotate motor_rc[50][COUNT] = {};
-    quint8 count_string = 1;
+    quint8 count_string = 0;
 };
 
 inline QDataStream &operator>>(QDataStream &in, qRotate &p)

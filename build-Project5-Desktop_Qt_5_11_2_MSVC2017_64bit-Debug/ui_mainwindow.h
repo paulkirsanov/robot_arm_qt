@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
@@ -105,6 +106,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_5;
     QLabel *label_13;
+    QCheckBox *checkBox;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -672,6 +674,11 @@ public:
 
         gridLayout_5->addWidget(label_13, 2, 1, 1, 1);
 
+        checkBox = new QCheckBox(layoutWidget1);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+
+        gridLayout_5->addWidget(checkBox, 1, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -709,6 +716,7 @@ public:
         pushButton_2->setText(QApplication::translate("MainWindow", "Write", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "Delete", nullptr));
         label_13->setText(QString());
+        checkBox->setText(QApplication::translate("MainWindow", "CheckBox", nullptr));
     } // retranslateUi
 
 };
