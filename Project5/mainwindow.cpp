@@ -443,7 +443,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_3_clicked() // READ
 {
     QFile file("data.txt");
-    quint8 motor_number = 1;
+    quint8 motor_number = 0;
 
     ui->textEdit->clear();
 
@@ -463,7 +463,7 @@ void MainWindow::on_pushButton_3_clicked() // READ
             if(motor_number == COUNT)
             {
                 count_string++;
-                motor_number = 1;
+                motor_number = 0;
             }
             else motor_number++;
         }
@@ -484,7 +484,7 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
 
         while(!out.atEnd())
         {
-            ++i;
+            i++;
         }
 
         motor[i][0].qMotor = ui->lineEdit_7->text();
@@ -501,7 +501,7 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
 
         if(motor[i][0].qMotor != NULL && motor[i][1].qMotor != NULL && motor[i][2].qMotor != NULL)
         {
-            for(uint8_t x = 1; x <= COUNT; x++)
+            for(uint8_t x = 0; x < COUNT; x++)
             {
                 out << motor[i][x].qMotor << motor[i][x].qDirection << motor[i][x].qMode;
                 qDebug() << "file was write";
@@ -518,10 +518,10 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
 void MainWindow::on_pushButton_4_clicked() //START
 {
     char i = 1;
-    for(char y = 1; y <= 2; y++)
+    for(char y = 0; y <= 1; y++)
     {
         serial.putChar(static_cast<char>(0xF8)); //START BIT
-        serial.putChar(y); //Driver
+        serial.putChar(y + 1); //Driver
 
         if(motor_rc[i][y].qDirection == "LEFT")
             serial.putChar(0x52);
@@ -552,6 +552,7 @@ void MainWindow::on_pushButton_4_clicked() //START
         serial.putChar(static_cast<char>(0xE0)); //STOP BIT
 
         qDebug() << "data was send";
+        ui->txtOutput->append("start motor");
     }
 }
 
@@ -561,6 +562,7 @@ void MainWindow::on_pushButton_5_clicked() //DELETE
     ui->textEdit->clear();
     file.remove();
     count_string = 1;
+    qDebug() << "file was delete";
 }
 
 void MainWindow::led_blink()
