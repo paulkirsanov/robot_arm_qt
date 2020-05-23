@@ -106,7 +106,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_5;
     QLabel *label_13;
-    QCheckBox *checkBox;
+    QCheckBox *repeat_checkBox;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -674,10 +674,10 @@ public:
 
         gridLayout_5->addWidget(label_13, 2, 1, 1, 1);
 
-        checkBox = new QCheckBox(layoutWidget1);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
+        repeat_checkBox = new QCheckBox(layoutWidget1);
+        repeat_checkBox->setObjectName(QStringLiteral("repeat_checkBox"));
 
-        gridLayout_5->addWidget(checkBox, 1, 1, 1, 1);
+        gridLayout_5->addWidget(repeat_checkBox, 1, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -716,7 +716,7 @@ public:
         pushButton_2->setText(QApplication::translate("MainWindow", "Write", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "Delete", nullptr));
         label_13->setText(QString());
-        checkBox->setText(QApplication::translate("MainWindow", "CheckBox", nullptr));
+        repeat_checkBox->setText(QApplication::translate("MainWindow", "Repeat", nullptr));
     } // retranslateUi
 
 };

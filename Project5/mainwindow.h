@@ -35,6 +35,7 @@ typedef struct
     QString qMotor;
     QString qDirection;
     QString qMode;
+    QString qSpeed;
 } qRotate;
 
 namespace Ui {
@@ -104,6 +105,7 @@ inline QDataStream &operator>>(QDataStream &in, qRotate &p)
     in >> p.qMotor;
     in >> p.qDirection;
     in >> p.qMode;
+    in >> p.qSpeed;
     return in;
 }
 
@@ -112,6 +114,7 @@ inline QDataStream &operator<<(QDataStream &out, const qRotate &p)
     out << p.qMotor;
     out << p.qDirection;
     out << p.qMode;
+    out << p.qSpeed;
     return out;
 }
 

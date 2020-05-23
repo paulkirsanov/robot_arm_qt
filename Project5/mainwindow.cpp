@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QTextStream>
 #include <QDebug>
+#include <stdio.h>
 
 QByteArray ba;
 QSerialPort serial;
@@ -443,7 +444,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_3_clicked() // READ
 {
     QFile file("data.txt");
-    quint8 motor_number = 0;
+    quint8 motor_number = 1;
     count_string = 0;
 
     ui->textEdit->clear();
@@ -457,16 +458,17 @@ void MainWindow::on_pushButton_3_clicked() // READ
             {
                 in >> motor_rc[count_string][motor_number];
 
-                qDebug() << count_string << motor_rc[count_string][motor_number].qMotor << motor_rc[count_string][motor_number].qDirection << motor_rc[count_string][motor_number].qMode;
+                qDebug() << count_string << motor_number << motor_rc[count_string][motor_number].qMotor << motor_rc[count_string][motor_number].qDirection << motor_rc[count_string][motor_number].qMode << motor_rc[count_string][motor_number].qSpeed;
 
                 ui->textEdit->append(motor_rc[count_string][motor_number].qMotor);
                 ui->textEdit->append(motor_rc[count_string][motor_number].qDirection);
                 ui->textEdit->append(motor_rc[count_string][motor_number].qMode);
+                ui->textEdit->append(motor_rc[count_string][motor_number].qSpeed);
 
-                if(motor_number == COUNT - 1)
+                if(motor_number == COUNT)
                 {
                     count_string++;
-                    motor_number = 0;
+                    motor_number = 1;
                 }
                 else motor_number++;
             }
@@ -505,20 +507,23 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
         motor[i][0].qMotor = ui->lineEdit_7->text();
         motor[i][0].qDirection = ui->comboBox_9->currentText();
         motor[i][0].qMode = ui->comboBox_10->currentText();
+        motor[i][0].qSpeed = QString("8");
 
         motor[i][1].qMotor = ui->lineEdit_8->text();
         motor[i][1].qDirection = ui->comboBox_8->currentText();
         motor[i][1].qMode = ui->comboBox_11->currentText();
+        motor[i][1].qSpeed = QString("1");
 
         motor[i][2].qMotor = ui->lineEdit_9->text();
         motor[i][2].qDirection = ui->comboBox->currentText();
         motor[i][2].qMode = ui->comboBox_12->currentText();
+        motor[i][2].qSpeed = QString("1");
 
         if(motor[i][0].qMotor != NULL && motor[i][1].qMotor != NULL && motor[i][2].qMotor != NULL)
         {
             for(uint8_t x = 0; x < COUNT; x++)
             {
-                out << motor[i][x].qMotor << motor[i][x].qDirection << motor[i][x].qMode;
+                out << motor[i][x].qMotor << motor[i][x].qDirection << motor[i][x].qMode << motor[i][x].qSpeed;
                 qDebug() << "file was write";
                 ui->txtOutput->append("file was write");
             }
@@ -533,9 +538,9 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
 
 void MainWindow::on_pushButton_4_clicked() //START
 {
-    for(int i = 0; i <= count_string; i++)
+    for(int i = 0; i != count_string; i++)
     {
-        for(int y = 1; y <= COUNT - 1; y++)
+        for(int y = 1; y != COUNT; y++)
         {
             if(serial.isOpen())
             {
@@ -566,7 +571,8 @@ void MainWindow::on_pushButton_4_clicked() //START
                 serial.putChar(static_cast<char>(first2)); //FIRST BIT
 
                 serial.putChar(0x00);
-                serial.putChar(0x08);
+                int s = motor_rc[i][y].qSpeed.toInt();
+                serial.putChar(static_cast<char>(s));
 
                 serial.putChar(static_cast<char>(0xE0)); //STOP BIT
 

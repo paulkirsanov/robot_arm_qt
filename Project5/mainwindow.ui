@@ -671,9 +671,9 @@ QPushButton:pressed{
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="repeat_checkBox">
        <property name="text">
-        <string>CheckBox</string>
+        <string>Repeat</string>
        </property>
       </widget>
      </item>
