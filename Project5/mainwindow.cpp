@@ -11,7 +11,7 @@
 #include <QTimer>
 #include <QTextStream>
 #include <QDebug>
-#include <stdio.h>
+#include <QThread>
 
 QByteArray ba;
 QSerialPort serial;
@@ -430,6 +430,22 @@ void MainWindow::UART_Receive()
     {
         ui->txtOutput->append("Memory flash error!");
     }
+
+    if(ba.at(0) == 0x27)
+    {
+        ui->txtOutput->append("Motor 1 has finished");
+        ok_motor1 = 1;
+    }
+    else if(ba.at(0) == 0x28)
+    {
+        ui->txtOutput->append("Motor 2 has finished");
+        ok_motor2 = 1;
+    }
+    else if(ba.at(0) == 0x29)
+    {
+        ui->txtOutput->append("Motor 3 has finished");
+        ok_motor3 = 1;
+    }
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -460,15 +476,20 @@ void MainWindow::on_pushButton_3_clicked() // READ
 
                 qDebug() << count_string << motor_number << motor_rc[count_string][motor_number].qMotor << motor_rc[count_string][motor_number].qDirection << motor_rc[count_string][motor_number].qMode << motor_rc[count_string][motor_number].qSpeed;
 
-                ui->textEdit->append(motor_rc[count_string][motor_number].qMotor);
-                ui->textEdit->append(motor_rc[count_string][motor_number].qDirection);
-                ui->textEdit->append(motor_rc[count_string][motor_number].qMode);
-                ui->textEdit->append(motor_rc[count_string][motor_number].qSpeed);
+                ui->textEdit->insertPlainText(motor_rc[count_string][motor_number].qMotor);
+                ui->textEdit->insertPlainText(" ");
+                ui->textEdit->insertPlainText(motor_rc[count_string][motor_number].qDirection);
+                ui->textEdit->insertPlainText(" ");
+                ui->textEdit->insertPlainText(motor_rc[count_string][motor_number].qMode);
+                ui->textEdit->insertPlainText(" ");
+                ui->textEdit->insertPlainText(motor_rc[count_string][motor_number].qSpeed);
+                ui->textEdit->insertPlainText("\t");
 
                 if(motor_number == COUNT)
                 {
                     count_string++;
                     motor_number = 1;
+                    ui->textEdit->insertPlainText("\r\n");
                 }
                 else motor_number++;
             }
@@ -519,7 +540,7 @@ void MainWindow::on_pushButton_2_clicked() // WRITE
         motor[i][2].qMode = ui->comboBox_12->currentText();
         motor[i][2].qSpeed = QString("1");
 
-        if(motor[i][0].qMotor != NULL && motor[i][1].qMotor != NULL && motor[i][2].qMotor != NULL)
+        if(motor[i][0].qMotor != " " && motor[i][1].qMotor != " " && motor[i][2].qMotor != " ")
         {
             for(uint8_t x = 0; x < COUNT; x++)
             {
@@ -580,6 +601,11 @@ void MainWindow::on_pushButton_4_clicked() //START
                 ui->txtOutput->append("start motor");
             }
         }
+        /*if(i == count_string - 1 && ui->repeat_checkBox->isChecked())
+        {
+            i = 0;
+            QThread::sleep(2);
+        }*/
     }
 }
 

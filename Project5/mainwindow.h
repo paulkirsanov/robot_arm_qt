@@ -98,6 +98,10 @@ private:
 
     qRotate motor_rc[50][COUNT] = {};
     quint8 count_string = 0;
+
+    quint8 ok_motor1 = 0;
+    quint8 ok_motor2 = 0;
+    quint8 ok_motor3 = 0;
 };
 
 inline QDataStream &operator>>(QDataStream &in, qRotate &p)

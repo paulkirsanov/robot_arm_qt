@@ -78,6 +78,7 @@ void UARTDialog::openClicked()
     {
         label_2->setText("Open");
         label_3->setStyleSheet("border-radius: 5px; background-color: green;");
+
     }
 }
 
