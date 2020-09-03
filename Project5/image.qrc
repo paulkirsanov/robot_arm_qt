@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>icons.ico</file>
+        <file>factory.ico</file>
+        <file>information.ico</file>
+        <file>link.ico</file>
     </qresource>
 </RCC>

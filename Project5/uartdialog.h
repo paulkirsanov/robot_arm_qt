@@ -13,8 +13,9 @@ class UARTDialog : public QDialog
     Q_OBJECT
 
 public:
-    UARTDialog(QWidget *parent = 0);
+    explicit UARTDialog(QWidget *parent = 0);
     QByteArray ba;
+
 signals:
     void uartConnect(void);
     void statusUART(void);
@@ -22,6 +23,7 @@ private slots:
     void openClicked();
     void closeClicked();
     void serialRecieve();
+    void led_blink_uart();
 private:
     QLabel *label;
     QLabel *label_1;

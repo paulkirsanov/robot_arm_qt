@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[365];
+    QByteArrayData data[21];
+    char stringdata0[405];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,16 +40,18 @@ QT_MOC_LITERAL(5, 90, 5), // "value"
 QT_MOC_LITERAL(6, 96, 23), // "on_leftButton_2_clicked"
 QT_MOC_LITERAL(7, 120, 34), // "on_horizontalSlider_2_valueCh..."
 QT_MOC_LITERAL(8, 155, 24), // "on_rightButton_2_clicked"
-QT_MOC_LITERAL(9, 180, 24), // "on_rightButton_3_clicked"
-QT_MOC_LITERAL(10, 205, 12), // "UART_Connect"
-QT_MOC_LITERAL(11, 218, 5), // "About"
-QT_MOC_LITERAL(12, 224, 12), // "UART_Receive"
-QT_MOC_LITERAL(13, 237, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(14, 259, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(15, 283, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(16, 307, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(17, 331, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(18, 355, 9) // "led_blink"
+QT_MOC_LITERAL(9, 180, 12), // "UART_Connect"
+QT_MOC_LITERAL(10, 193, 5), // "About"
+QT_MOC_LITERAL(11, 199, 12), // "UART_Receive"
+QT_MOC_LITERAL(12, 212, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(13, 234, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(14, 258, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(15, 282, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(16, 306, 23), // "on_pushButton_5_clicked"
+QT_MOC_LITERAL(17, 330, 9), // "led_blink"
+QT_MOC_LITERAL(18, 340, 23), // "on_pushButton_6_clicked"
+QT_MOC_LITERAL(19, 364, 23), // "on_pushButton_7_clicked"
+QT_MOC_LITERAL(20, 388, 16) // "UART_ConnectShow"
 
     },
     "MainWindow\0on_rightButton_clicked\0\0"
@@ -57,12 +59,12 @@ QT_MOC_LITERAL(18, 355, 9) // "led_blink"
     "on_horizontalSlider_valueChanged\0value\0"
     "on_leftButton_2_clicked\0"
     "on_horizontalSlider_2_valueChanged\0"
-    "on_rightButton_2_clicked\0"
-    "on_rightButton_3_clicked\0UART_Connect\0"
+    "on_rightButton_2_clicked\0UART_Connect\0"
     "About\0UART_Receive\0on_pushButton_clicked\0"
     "on_pushButton_3_clicked\0on_pushButton_2_clicked\0"
     "on_pushButton_4_clicked\0on_pushButton_5_clicked\0"
-    "led_blink"
+    "led_blink\0on_pushButton_6_clicked\0"
+    "on_pushButton_7_clicked\0UART_ConnectShow"
 };
 #undef QT_MOC_LITERAL
 
@@ -72,7 +74,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -80,22 +82,24 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x08 /* Private */,
-       3,    0,   95,    2, 0x08 /* Private */,
-       4,    1,   96,    2, 0x08 /* Private */,
-       6,    0,   99,    2, 0x08 /* Private */,
-       7,    1,  100,    2, 0x08 /* Private */,
-       8,    0,  103,    2, 0x08 /* Private */,
-       9,    0,  104,    2, 0x08 /* Private */,
-      10,    0,  105,    2, 0x08 /* Private */,
-      11,    0,  106,    2, 0x08 /* Private */,
-      12,    0,  107,    2, 0x08 /* Private */,
-      13,    0,  108,    2, 0x08 /* Private */,
-      14,    0,  109,    2, 0x08 /* Private */,
-      15,    0,  110,    2, 0x08 /* Private */,
-      16,    0,  111,    2, 0x08 /* Private */,
-      17,    0,  112,    2, 0x08 /* Private */,
-      18,    0,  113,    2, 0x08 /* Private */,
+       1,    0,  104,    2, 0x08 /* Private */,
+       3,    0,  105,    2, 0x08 /* Private */,
+       4,    1,  106,    2, 0x08 /* Private */,
+       6,    0,  109,    2, 0x08 /* Private */,
+       7,    1,  110,    2, 0x08 /* Private */,
+       8,    0,  113,    2, 0x08 /* Private */,
+       9,    0,  114,    2, 0x08 /* Private */,
+      10,    0,  115,    2, 0x08 /* Private */,
+      11,    0,  116,    2, 0x08 /* Private */,
+      12,    0,  117,    2, 0x08 /* Private */,
+      13,    0,  118,    2, 0x08 /* Private */,
+      14,    0,  119,    2, 0x08 /* Private */,
+      15,    0,  120,    2, 0x08 /* Private */,
+      16,    0,  121,    2, 0x08 /* Private */,
+      17,    0,  122,    2, 0x08 /* Private */,
+      18,    0,  123,    2, 0x08 /* Private */,
+      19,    0,  124,    2, 0x08 /* Private */,
+      20,    0,  125,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -103,6 +107,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -130,16 +136,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_leftButton_2_clicked(); break;
         case 4: _t->on_horizontalSlider_2_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->on_rightButton_2_clicked(); break;
-        case 6: _t->on_rightButton_3_clicked(); break;
-        case 7: _t->UART_Connect(); break;
-        case 8: _t->About(); break;
-        case 9: _t->UART_Receive(); break;
-        case 10: _t->on_pushButton_clicked(); break;
-        case 11: _t->on_pushButton_3_clicked(); break;
-        case 12: _t->on_pushButton_2_clicked(); break;
-        case 13: _t->on_pushButton_4_clicked(); break;
-        case 14: _t->on_pushButton_5_clicked(); break;
-        case 15: _t->led_blink(); break;
+        case 6: _t->UART_Connect(); break;
+        case 7: _t->About(); break;
+        case 8: _t->UART_Receive(); break;
+        case 9: _t->on_pushButton_clicked(); break;
+        case 10: _t->on_pushButton_3_clicked(); break;
+        case 11: _t->on_pushButton_2_clicked(); break;
+        case 12: _t->on_pushButton_4_clicked(); break;
+        case 13: _t->on_pushButton_5_clicked(); break;
+        case 14: _t->led_blink(); break;
+        case 15: _t->on_pushButton_6_clicked(); break;
+        case 16: _t->on_pushButton_7_clicked(); break;
+        case 17: _t->UART_ConnectShow(); break;
         default: ;
         }
     }
@@ -170,13 +178,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 18;
     }
     return _id;
 }

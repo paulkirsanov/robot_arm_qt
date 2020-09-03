@@ -177,7 +177,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_image.cpp
 debug\qrc_image.cpp: ..\Project5\image.qrc \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\rcc.exe \
-		..\Project5\icons.ico
+		..\Project5\information.ico \
+		..\Project5\factory.ico \
+		..\Project5\icons.ico \
+		..\Project5\link.ico
 	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\rcc.exe -name image ..\Project5\image.qrc -o debug\qrc_image.cpp
 
 compiler_qmlcache_make_all:
@@ -306,6 +309,10 @@ debug\moc_mainwindow.cpp: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QM
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialport.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialportglobal.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFile \
+		..\Project5\uartdialog.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qdialog.h \
+		..\Project5\aboutdialog.h \
 		..\Project5\mainwindow.h \
 		debug\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
@@ -666,6 +673,10 @@ debug\main.obj: ..\Project5\main.cpp ..\Project5\mainwindow.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialport.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialportglobal.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFile \
+		..\Project5\uartdialog.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qdialog.h \
+		..\Project5\aboutdialog.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QApplication \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qapplication.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -785,19 +796,67 @@ debug\mainwindow.obj: ..\Project5\mainwindow.cpp ..\Project5\mainwindow.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialport.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialportglobal.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFile \
-		ui_mainwindow.h \
 		..\Project5\uartdialog.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qdialog.h \
 		..\Project5\aboutdialog.h \
-		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\QSerialPortInfo \
-		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialportinfo.h \
-		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QString \
+		ui_mainwindow.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QVariant \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\QIcon \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QComboBox \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qcombobox.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QFrame \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QLineEdit \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qlineedit.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qtextcursor.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qtextformat.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qpen.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qtextoption.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QMenuBar \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qmenubar.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qmenu.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QSlider \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QTextEdit \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qtextedit.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui\qtextdocument.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\QSerialPortInfo \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtSerialPort\qserialportinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QString \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets\QAction \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QByteArray \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QTimer \

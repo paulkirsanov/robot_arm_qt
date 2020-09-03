@@ -38,9 +38,15 @@
    <string>Control</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="image.qrc">
-    <normaloff>:/icons.ico</normaloff>
-    <normalon>:/icons.ico</normalon>:/icons.ico</iconset>
+   <iconset>
+    <normaloff>factory.ico</normaloff>
+    <normalon>:/factory.ico</normalon>
+    <disabledoff>:/factory.ico</disabledoff>
+    <disabledon>:/factory.ico</disabledon>
+    <activeoff>:/factory.ico</activeoff>
+    <activeon>:/factory.ico</activeon>
+    <selectedoff>:/factory.ico</selectedoff>
+    <selectedon>:/factory.ico</selectedon>factory.ico</iconset>
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
@@ -76,7 +82,7 @@ QPushButton:pressed{
       <x>10</x>
       <y>0</y>
       <width>981</width>
-      <height>211</height>
+      <height>298</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -118,7 +124,7 @@ QPushButton:pressed{
 }</string>
              </property>
              <property name="text">
-              <string>Right</string>
+              <string>Up</string>
              </property>
             </widget>
            </item>
@@ -154,7 +160,7 @@ QPushButton:pressed{
 }</string>
              </property>
              <property name="text">
-              <string>Left</string>
+              <string>Down</string>
              </property>
             </widget>
            </item>
@@ -189,11 +195,31 @@ QPushButton:pressed{
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="Line" name="line_3">
@@ -238,7 +264,7 @@ QPushButton:pressed{
 }</string>
              </property>
              <property name="text">
-              <string>Open</string>
+              <string>Right</string>
              </property>
             </widget>
            </item>
@@ -274,7 +300,7 @@ QPushButton:pressed{
 }</string>
              </property>
              <property name="text">
-              <string>Close</string>
+              <string>Left</string>
              </property>
             </widget>
            </item>
@@ -309,7 +335,76 @@ QPushButton:pressed{
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
+               </property>
+              </widget>
+             </item>
             </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Gripper</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QPushButton" name="pushButton_6">
+             <property name="text">
+              <string>Open</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QPushButton" name="pushButton_7">
+             <property name="text">
+              <string>Close</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -325,80 +420,24 @@ QPushButton:pressed{
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QLabel" name="label_6">
-             <property name="text">
-              <string>Driver 1</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_5">
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="comboBox_4"/>
-           </item>
-           <item>
-            <widget class="QComboBox" name="comboBox_5"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QLabel" name="label_7">
-             <property name="text">
-              <string>Driver 2</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_6">
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="comboBox_6">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="comboBox_7"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QPushButton" name="rightButton_3">
+      <widget class="QTextEdit" name="txtOutput"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>981</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="6" column="4">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton_4">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	background-color: rgb(182,189,184);
@@ -412,25 +451,14 @@ QPushButton:pressed{
 }</string>
          </property>
          <property name="text">
-          <string>Send</string>
+          <string>Start</string>
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="Line" name="line_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="0" rowspan="2">
-            <widget class="QPushButton" name="pushButton">
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	background-color: rgb(182,189,184);
 	color:while;
 	border: 1px solid gray;
@@ -440,120 +468,19 @@ QPushButton:pressed{
 	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
 									stop: 0 #9C978B, stop: 1 #7A7466);
 }</string>
-             </property>
-             <property name="text">
-              <string>Reset</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QLabel" name="label_11">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLabel" name="label_2">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QLabel" name="label_12">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="label_9">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignHCenter|Qt::AlignTop</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="label_8">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
+         </property>
+         <property name="text">
+          <string>Reset</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
-     <item>
-      <widget class="QTextEdit" name="txtOutput"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>220</y>
-      <width>981</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_5">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-	background-color: rgb(182,189,184);
-	color:while;
-	border: 1px solid gray;
-}
-
-QPushButton:pressed{
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-									stop: 0 #9C978B, stop: 1 #7A7466);
-}</string>
-       </property>
-       <property name="text">
-        <string>Start</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
+     <item row="0" column="4">
       <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="0">
+        <widget class="QTextEdit" name="textEdit"/>
+       </item>
        <item row="0" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
@@ -597,13 +524,29 @@ QPushButton:pressed{
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
-        <widget class="QTextEdit" name="textEdit"/>
-       </item>
       </layout>
      </item>
-     <item row="1" column="0">
+     <item row="5" column="4">
       <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="2">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgb(182,189,184);
+	color:while;
+	border: 1px solid gray;
+}
+
+QPushButton:pressed{
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+									stop: 0 #9C978B, stop: 1 #7A7466);
+}</string>
+         </property>
+         <property name="text">
+          <string>Delete</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="1">
         <widget class="QPushButton" name="pushButton_3">
          <property name="styleSheet">
@@ -642,40 +585,14 @@ QPushButton:pressed{
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	background-color: rgb(182,189,184);
-	color:while;
-	border: 1px solid gray;
-}
-
-QPushButton:pressed{
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-									stop: 0 #9C978B, stop: 1 #7A7466);
-}</string>
-         </property>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>Delete</string>
+          <string/>
          </property>
         </widget>
        </item>
       </layout>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="label_13">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QCheckBox" name="repeat_checkBox">
-       <property name="text">
-        <string>Repeat</string>
-       </property>
-      </widget>
      </item>
     </layout>
    </widget>
@@ -692,8 +609,6 @@ QPushButton:pressed{
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="image.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

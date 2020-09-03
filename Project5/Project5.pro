@@ -51,4 +51,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     image.qrc
-win64:RC_ICONS += icons.ico
+win64:RC_ICONS += factory.ico

@@ -6,6 +6,8 @@
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QFile>
+#include "uartdialog.h"
+#include "aboutdialog.h"
 
 typedef enum
 {
@@ -64,8 +66,6 @@ private slots:
 
     void on_rightButton_2_clicked();
 
-    void on_rightButton_3_clicked();
-
     void UART_Connect();
 
     void About();
@@ -89,8 +89,18 @@ private slots:
     friend QDataStream &operator>>(QDataStream &in, qRotate &p);
     friend QDataStream &operator<<(QDataStream &out, const qRotate &p);
 
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
+public slots:
+    void UART_ConnectShow();
+
 private:
     Ui::MainWindow *ui;
+
+    UARTDialog UART_Object;
+
     qRotate motor[50][COUNT] = {};
 
     int value_slider = 1;
@@ -102,6 +112,8 @@ private:
     quint8 ok_motor1 = 0;
     quint8 ok_motor2 = 0;
     quint8 ok_motor3 = 0;
+
+    //QByteArray arr[3];
 };
 
 inline QDataStream &operator>>(QDataStream &in, qRotate &p)

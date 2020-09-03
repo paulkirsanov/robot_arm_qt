@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
@@ -48,6 +47,8 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QSlider *horizontalSlider;
     QLabel *label;
+    QLabel *label_2;
+    QLabel *label_14;
     QFrame *line_3;
     QLabel *label_5;
     QHBoxLayout *horizontalLayout_4;
@@ -61,35 +62,24 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QSlider *horizontalSlider_2;
     QLabel *label_3;
-    QFrame *line_6;
-    QVBoxLayout *verticalLayout_3;
-    QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_6;
-    QLineEdit *lineEdit_5;
-    QComboBox *comboBox_4;
-    QComboBox *comboBox_5;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *label_7;
-    QLineEdit *lineEdit_6;
-    QComboBox *comboBox_6;
-    QComboBox *comboBox_7;
-    QPushButton *rightButton_3;
-    QFrame *line_4;
-    QHBoxLayout *horizontalLayout_7;
-    QGridLayout *gridLayout;
-    QPushButton *pushButton;
-    QLabel *label_11;
-    QLabel *label_10;
-    QLabel *label_2;
-    QLabel *label_12;
     QLabel *label_9;
-    QLabel *label_8;
+    QLabel *label_6;
+    QFrame *line_4;
+    QLabel *label_15;
+    QHBoxLayout *horizontalLayout_9;
+    QVBoxLayout *verticalLayout_9;
+    QPushButton *pushButton_6;
+    QVBoxLayout *verticalLayout_10;
+    QPushButton *pushButton_7;
+    QFrame *line_6;
     QTextEdit *txtOutput;
     QWidget *layoutWidget1;
     QGridLayout *gridLayout_5;
+    QGridLayout *gridLayout_2;
     QPushButton *pushButton_4;
+    QPushButton *pushButton;
     QGridLayout *gridLayout_3;
+    QTextEdit *textEdit;
     QHBoxLayout *horizontalLayout_8;
     QLineEdit *lineEdit_7;
     QComboBox *comboBox_9;
@@ -100,13 +90,11 @@ public:
     QLineEdit *lineEdit_9;
     QComboBox *comboBox;
     QComboBox *comboBox_12;
-    QTextEdit *textEdit;
     QGridLayout *gridLayout_4;
+    QPushButton *pushButton_5;
     QPushButton *pushButton_3;
     QPushButton *pushButton_2;
-    QPushButton *pushButton_5;
     QLabel *label_13;
-    QCheckBox *repeat_checkBox;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -146,7 +134,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 0, 981, 211));
+        layoutWidget->setGeometry(QRect(10, 0, 981, 298));
         horizontalLayout_6 = new QHBoxLayout(layoutWidget);
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -240,6 +228,12 @@ public:
 
         horizontalLayout_3->addWidget(label);
 
+        label_2 = new QLabel(layoutWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_3->addWidget(label_2);
+
 
         verticalLayout_5->addLayout(horizontalLayout_3);
 
@@ -248,6 +242,12 @@ public:
 
 
         verticalLayout_8->addLayout(horizontalLayout_5);
+
+        label_14 = new QLabel(layoutWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_8->addWidget(label_14);
 
         line_3 = new QFrame(layoutWidget);
         line_3->setObjectName(QStringLiteral("line_3"));
@@ -341,6 +341,17 @@ public:
 
         horizontalLayout_2->addWidget(label_3);
 
+        label_9 = new QLabel(layoutWidget);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy1);
+        label_9->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+
+        horizontalLayout_2->addWidget(label_9);
+
 
         verticalLayout_7->addLayout(horizontalLayout_2);
 
@@ -349,6 +360,53 @@ public:
 
 
         verticalLayout_8->addLayout(horizontalLayout_4);
+
+        label_6 = new QLabel(layoutWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_8->addWidget(label_6);
+
+        line_4 = new QFrame(layoutWidget);
+        line_4->setObjectName(QStringLiteral("line_4"));
+        line_4->setFrameShape(QFrame::HLine);
+        line_4->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_8->addWidget(line_4);
+
+        label_15 = new QLabel(layoutWidget);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_8->addWidget(label_15);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setSpacing(6);
+        verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
+        pushButton_6 = new QPushButton(layoutWidget);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+
+        verticalLayout_9->addWidget(pushButton_6);
+
+
+        horizontalLayout_9->addLayout(verticalLayout_9);
+
+        verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setSpacing(6);
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
+        pushButton_7 = new QPushButton(layoutWidget);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+
+        verticalLayout_10->addWidget(pushButton_7);
+
+
+        horizontalLayout_9->addLayout(verticalLayout_10);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_9);
 
 
         horizontalLayout_6->addLayout(verticalLayout_8);
@@ -360,171 +418,6 @@ public:
 
         horizontalLayout_6->addWidget(line_6);
 
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label_6 = new QLabel(layoutWidget);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(label_6);
-
-        lineEdit_5 = new QLineEdit(layoutWidget);
-        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
-        lineEdit_5->setLayoutDirection(Qt::LeftToRight);
-        lineEdit_5->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(lineEdit_5);
-
-        comboBox_4 = new QComboBox(layoutWidget);
-        comboBox_4->setObjectName(QStringLiteral("comboBox_4"));
-
-        verticalLayout->addWidget(comboBox_4);
-
-        comboBox_5 = new QComboBox(layoutWidget);
-        comboBox_5->setObjectName(QStringLiteral("comboBox_5"));
-
-        verticalLayout->addWidget(comboBox_5);
-
-
-        horizontalLayout->addLayout(verticalLayout);
-
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        label_7 = new QLabel(layoutWidget);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_2->addWidget(label_7);
-
-        lineEdit_6 = new QLineEdit(layoutWidget);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
-        lineEdit_6->setLayoutDirection(Qt::LeftToRight);
-        lineEdit_6->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_2->addWidget(lineEdit_6);
-
-        comboBox_6 = new QComboBox(layoutWidget);
-        comboBox_6->setObjectName(QStringLiteral("comboBox_6"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(comboBox_6->sizePolicy().hasHeightForWidth());
-        comboBox_6->setSizePolicy(sizePolicy1);
-
-        verticalLayout_2->addWidget(comboBox_6);
-
-        comboBox_7 = new QComboBox(layoutWidget);
-        comboBox_7->setObjectName(QStringLiteral("comboBox_7"));
-
-        verticalLayout_2->addWidget(comboBox_7);
-
-
-        horizontalLayout->addLayout(verticalLayout_2);
-
-
-        verticalLayout_3->addLayout(horizontalLayout);
-
-        rightButton_3 = new QPushButton(layoutWidget);
-        rightButton_3->setObjectName(QStringLiteral("rightButton_3"));
-        rightButton_3->setStyleSheet(QLatin1String("QPushButton{\n"
-"	background-color: rgb(182,189,184);\n"
-"	color:while;\n"
-"	border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"									stop: 0 #9C978B, stop: 1 #7A7466);\n"
-"}"));
-
-        verticalLayout_3->addWidget(rightButton_3);
-
-        line_4 = new QFrame(layoutWidget);
-        line_4->setObjectName(QStringLiteral("line_4"));
-        line_4->setFrameShape(QFrame::HLine);
-        line_4->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout_3->addWidget(line_4);
-
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setSpacing(6);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        gridLayout = new QGridLayout();
-        gridLayout->setSpacing(6);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"	background-color: rgb(182,189,184);\n"
-"	color:while;\n"
-"	border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"									stop: 0 #9C978B, stop: 1 #7A7466);\n"
-"}"));
-
-        gridLayout->addWidget(pushButton, 0, 0, 2, 1);
-
-        label_11 = new QLabel(layoutWidget);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(label_11, 0, 3, 1, 1);
-
-        label_10 = new QLabel(layoutWidget);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(label_10, 0, 2, 1, 1);
-
-        label_2 = new QLabel(layoutWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(label_2, 1, 1, 1, 1);
-
-        label_12 = new QLabel(layoutWidget);
-        label_12->setObjectName(QStringLiteral("label_12"));
-        label_12->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(label_12, 1, 3, 1, 1);
-
-        label_9 = new QLabel(layoutWidget);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
-        label_9->setSizePolicy(sizePolicy2);
-        label_9->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
-
-        gridLayout->addWidget(label_9, 1, 2, 1, 1);
-
-        label_8 = new QLabel(layoutWidget);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(label_8, 0, 1, 1, 1);
-
-
-        horizontalLayout_7->addLayout(gridLayout);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_7);
-
-
-        horizontalLayout_6->addLayout(verticalLayout_3);
-
         txtOutput = new QTextEdit(layoutWidget);
         txtOutput->setObjectName(QStringLiteral("txtOutput"));
 
@@ -532,12 +425,15 @@ public:
 
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 220, 981, 251));
+        layoutWidget1->setGeometry(QRect(10, 310, 981, 161));
         gridLayout_5 = new QGridLayout(layoutWidget1);
         gridLayout_5->setSpacing(6);
         gridLayout_5->setContentsMargins(11, 11, 11, 11);
         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         pushButton_4 = new QPushButton(layoutWidget1);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setStyleSheet(QLatin1String("QPushButton{\n"
@@ -551,11 +447,34 @@ public:
 "									stop: 0 #9C978B, stop: 1 #7A7466);\n"
 "}"));
 
-        gridLayout_5->addWidget(pushButton_4, 2, 0, 1, 1);
+        gridLayout_2->addWidget(pushButton_4, 0, 0, 1, 1);
+
+        pushButton = new QPushButton(layoutWidget1);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"	background-color: rgb(182,189,184);\n"
+"	color:while;\n"
+"	border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"									stop: 0 #9C978B, stop: 1 #7A7466);\n"
+"}"));
+
+        gridLayout_2->addWidget(pushButton, 0, 1, 1, 1);
+
+
+        gridLayout_5->addLayout(gridLayout_2, 6, 4, 1, 1);
 
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        textEdit = new QTextEdit(layoutWidget1);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+
+        gridLayout_3->addWidget(textEdit, 1, 0, 1, 1);
+
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
@@ -610,17 +529,27 @@ public:
 
         gridLayout_3->addLayout(horizontalLayout_8, 0, 0, 1, 1);
 
-        textEdit = new QTextEdit(layoutWidget1);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
 
-        gridLayout_3->addWidget(textEdit, 1, 0, 1, 1);
-
-
-        gridLayout_5->addLayout(gridLayout_3, 0, 0, 1, 1);
+        gridLayout_5->addLayout(gridLayout_3, 0, 4, 1, 1);
 
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        pushButton_5 = new QPushButton(layoutWidget1);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setStyleSheet(QLatin1String("QPushButton{\n"
+"	background-color: rgb(182,189,184);\n"
+"	color:while;\n"
+"	border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"									stop: 0 #9C978B, stop: 1 #7A7466);\n"
+"}"));
+
+        gridLayout_4->addWidget(pushButton_5, 0, 2, 1, 1);
+
         pushButton_3 = new QPushButton(layoutWidget1);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setStyleSheet(QLatin1String("QPushButton{\n"
@@ -651,33 +580,13 @@ public:
 
         gridLayout_4->addWidget(pushButton_2, 0, 0, 1, 1);
 
-        pushButton_5 = new QPushButton(layoutWidget1);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setStyleSheet(QLatin1String("QPushButton{\n"
-"	background-color: rgb(182,189,184);\n"
-"	color:while;\n"
-"	border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"									stop: 0 #9C978B, stop: 1 #7A7466);\n"
-"}"));
-
-        gridLayout_4->addWidget(pushButton_5, 0, 2, 1, 1);
-
-
-        gridLayout_5->addLayout(gridLayout_4, 1, 0, 1, 1);
-
         label_13 = new QLabel(layoutWidget1);
         label_13->setObjectName(QStringLiteral("label_13"));
 
-        gridLayout_5->addWidget(label_13, 2, 1, 1, 1);
+        gridLayout_4->addWidget(label_13, 0, 3, 1, 1);
 
-        repeat_checkBox = new QCheckBox(layoutWidget1);
-        repeat_checkBox->setObjectName(QStringLiteral("repeat_checkBox"));
 
-        gridLayout_5->addWidget(repeat_checkBox, 1, 1, 1, 1);
+        gridLayout_5->addLayout(gridLayout_4, 5, 4, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -694,29 +603,26 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Control", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Driver 1", nullptr));
-        leftButton->setText(QApplication::translate("MainWindow", "Right", nullptr));
-        rightButton->setText(QApplication::translate("MainWindow", "Left", nullptr));
+        leftButton->setText(QApplication::translate("MainWindow", "Up", nullptr));
+        rightButton->setText(QApplication::translate("MainWindow", "Down", nullptr));
         label->setText(QApplication::translate("MainWindow", "1", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Driver 2", nullptr));
-        leftButton_2->setText(QApplication::translate("MainWindow", "Open", nullptr));
-        rightButton_2->setText(QApplication::translate("MainWindow", "Close", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "1", nullptr));
-        label_6->setText(QApplication::translate("MainWindow", "Driver 1", nullptr));
-        label_7->setText(QApplication::translate("MainWindow", "Driver 2", nullptr));
-        rightButton_3->setText(QApplication::translate("MainWindow", "Send", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Reset", nullptr));
-        label_11->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_10->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
         label_2->setText(QString());
-        label_12->setText(QString());
+        label_14->setText(QString());
+        label_5->setText(QApplication::translate("MainWindow", "Driver 2", nullptr));
+        leftButton_2->setText(QApplication::translate("MainWindow", "Right", nullptr));
+        rightButton_2->setText(QApplication::translate("MainWindow", "Left", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "1", nullptr));
         label_9->setText(QString());
-        label_8->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
+        label_6->setText(QString());
+        label_15->setText(QApplication::translate("MainWindow", "Gripper", nullptr));
+        pushButton_6->setText(QApplication::translate("MainWindow", "Open", nullptr));
+        pushButton_7->setText(QApplication::translate("MainWindow", "Close", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "Start", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Reset", nullptr));
+        pushButton_5->setText(QApplication::translate("MainWindow", "Delete", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "Read", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "Write", nullptr));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Delete", nullptr));
         label_13->setText(QString());
-        repeat_checkBox->setText(QApplication::translate("MainWindow", "Repeat", nullptr));
     } // retranslateUi
 
 };

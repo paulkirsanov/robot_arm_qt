@@ -15,7 +15,7 @@ public:
 signals:
     void about(void);
 private slots:
-    void closeClicked();
+
 private:
     QLabel *label;
     QLabel *label_pic;
